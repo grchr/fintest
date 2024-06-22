@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>fintest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>fintest</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>17</java.version>
+		<yahoo.finance.api.version>3.16.4</yahoo.finance.api.version>
+		<vantage.client.version>1.7.0</vantage.client.version>
+		<polygon-io.api.version>5.1.2</polygon-io.api.version>
+		<apache-poi.version>5.2.5</apache-poi.version>
+		<apache.lang3.version>3.12.0</apache.lang3.version>
+		<springdoc.openapi.version>2.2.0</springdoc.openapi.version>
+	</properties>
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Yahoo Finance API dependency -->
+			<dependency>
+				<groupId>de.sfuhrm</groupId>
+				<artifactId>YahooFinanceAPI</artifactId>
+				<version>${yahoo.finance.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.github.crazzyghost</groupId>
+				<artifactId>alphavantage-java</artifactId>
+				<version>${vantage.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.polygon-io</groupId>
+				<artifactId>client-jvm</artifactId>
+				<version>${polygon-io.api.version}}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${apache-poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache.lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>${springdoc.openapi.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Yahoo Finance API dependency -->
+		<dependency>
+			<groupId>de.sfuhrm</groupId>
+			<artifactId>YahooFinanceAPI</artifactId>
+			<version>${yahoo.finance.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.polygon-io</groupId>
+			<artifactId>client-jvm</artifactId>
+			<version>${polygon-io.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.crazzyghost</groupId>
+			<artifactId>alphavantage-java</artifactId>
+			<version>${vantage.client.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${apache-poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache.lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.openapi.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
