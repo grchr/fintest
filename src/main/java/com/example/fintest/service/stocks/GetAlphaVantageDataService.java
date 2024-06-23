@@ -1,4 +1,4 @@
-package com.example.fintest.service;
+package com.example.fintest.service.stocks;
 
 import com.crazzyghost.alphavantage.AlphaVantage;
 import com.crazzyghost.alphavantage.Config;
@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+/* This service calls in the ready-made AlphaVantage API from crazzyghost.
+ *
+ */
 @Service
 public class GetAlphaVantageDataService {
 
@@ -18,25 +21,6 @@ public class GetAlphaVantageDataService {
 
   public CompanyOverviewResponse getFundanentalData(String symbol){
         return AlphaVantage.api().fundamentalData().companyOverview().forSymbol("symbol").fetchSync();
-  }
-
-  public CompanyOverview getFundanentalDataAsync(String symbol){
-    CompletableFuture<CompanyOverview> future = new CompletableFuture<>();
-
-    AlphaVantage.api().fundamentalData().companyOverview().forSymbol(symbol).onSuccess(response ->
-    {
-      CompanyOverview companyOverview = ((CompanyOverviewResponse) response).getOverview();
-      future.complete(companyOverview);
-    }).onFailure(respnse -> {
-      LOGGER.warn("Failure to get data");
-    }).fetch();
-
-    try {
-      return future.get();
-    } catch (InterruptedException | ExecutionException e) {
-      LOGGER.error("Failure to return data");
-      return new CompanyOverview();
-    }
   }
 
   public CompanyOverview getFundanentalDataAsync(String symbol, String key){

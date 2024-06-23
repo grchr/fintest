@@ -1,4 +1,4 @@
-package com.example.fintest.service;
+package com.example.fintest.service.stocks;
 
 import io.polygon.kotlin.sdk.rest.PolygonRestApiCallback;
 import io.polygon.kotlin.sdk.rest.PolygonRestClient;

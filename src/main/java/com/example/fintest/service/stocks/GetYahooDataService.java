@@ -1,4 +1,4 @@
-package com.example.fintest.service;
+package com.example.fintest.service.stocks;
 
 import org.springframework.stereotype.Service;
 import yahoofinance.Stock;
