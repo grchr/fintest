@@ -31,30 +31,14 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
-		</repository>
+<!--		<repository>-->
+<!--			<id>jitpack.io</id>-->
+<!--			<url>https://jitpack.io</url>-->
+<!--		</repository>-->
 	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- Yahoo Finance API dependency -->
-			<dependency>
-				<groupId>de.sfuhrm</groupId>
-				<artifactId>YahooFinanceAPI</artifactId>
-				<version>${yahoo.finance.api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.github.crazzyghost</groupId>
-				<artifactId>alphavantage-java</artifactId>
-				<version>${vantage.client.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.polygon-io</groupId>
-				<artifactId>client-jvm</artifactId>
-				<version>${polygon-io.api.version}}</version>
-			</dependency>
 			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
@@ -69,6 +53,33 @@
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 				<version>${springdoc.openapi.version}</version>
+			</dependency>
+			<!-- Managing Selenium versions -->
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-api</artifactId>
+				<version>2.52.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-htmlunit-driver</artifactId>
+				<version>2.52.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-support</artifactId>
+				<version>2.52.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-remote-driver</artifactId>
+				<version>2.52.0</version>
+			</dependency>
+			<!-- Managing HtmlUnit versions -->
+			<dependency>
+				<groupId>net.sourceforge.htmlunit</groupId>
+				<artifactId>htmlunit</artifactId>
+				<version>2.18</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -85,22 +96,6 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-		</dependency>
-		<!-- Yahoo Finance API dependency -->
-		<dependency>
-			<groupId>de.sfuhrm</groupId>
-			<artifactId>YahooFinanceAPI</artifactId>
-			<version>${yahoo.finance.api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.polygon-io</groupId>
-			<artifactId>client-jvm</artifactId>
-			<version>${polygon-io.api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.crazzyghost</groupId>
-			<artifactId>alphavantage-java</artifactId>
-			<version>${vantage.client.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -122,6 +117,11 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>${springdoc.openapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.opensource</groupId>
+			<artifactId>yf-project</artifactId>
+			<version>0.0.5</version>
 		</dependency>
 	</dependencies>
 
